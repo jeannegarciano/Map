@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import androidx.fragment.app.FragmentActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -46,8 +48,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                 .build();                   // Creates a CameraPosition from the builder
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
 
-
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MapsActivity.class));
+        moveTaskToBack(true);
     }
 }
