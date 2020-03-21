@@ -30,6 +30,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         LatLng ontario = new LatLng(43.6691, -79.3913);
+        //adding the marker of the target location
         mMap.addMarker(new MarkerOptions().position(ontario).title("Ontario College of Teachers"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(ontario));
         mMap.getMaxZoomLevel();
@@ -37,7 +38,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ontario, 15));
         // Zoom in, animating the camera.
         mMap.animateCamera(CameraUpdateFactory.zoomIn());
-        mMap.addMarker(new MarkerOptions().position(ontario).title("Ontario College of Teachers"));
 
         // Zoom out to zoom level 10, animating with a duration of 2 seconds.
         mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
